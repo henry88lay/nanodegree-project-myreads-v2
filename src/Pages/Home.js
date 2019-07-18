@@ -23,7 +23,11 @@ export default class Home extends Component {
             title='Currently Reading'
             books={this.props.currentlyReading}
           />
-          <Shelf title='Want to Read' books={this.props.wantToRead} />
+          <Shelf
+            title='Want to Read'
+            books={this.props.wantToRead}
+            moveBook={this.props.moveBook}
+          />
           <Shelf title='Read' books={this.props.read} />
         </div>
         <FloatActionButton />

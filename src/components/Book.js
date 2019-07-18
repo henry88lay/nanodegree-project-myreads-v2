@@ -7,7 +7,7 @@ export default class Book extends Component {
       const shelf = e.target.value;
       const book = this.props;
       const result = await update({book}, shelf);
-      console.log(result);
+      this.props.moveBook(book, shelf);
     } catch (error) {
       console.log(error);
     }
