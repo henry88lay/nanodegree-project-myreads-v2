@@ -7,11 +7,10 @@ export default class Book extends Component {
       const shelf = e.target.value;
       const book = this.props;
       const result = await update({book}, shelf);
-      this.props.moveBook(book, shelf);
+      this.props.moveBook(book, shelf, result);
     } catch (error) {
       console.log(error);
     }
-    console.log(e.target.value);
   };
   render() {
     return (
@@ -26,7 +25,7 @@ export default class Book extends Component {
                 backgroundImage: `url(${this.props.imageLinks.thumbnail})`
               }}
             />
-            <div className='book-shelf-changer'>
+            <div className='book-shelf-changer' value={this.props.shelf}>
               <select onChange={this.handleChange}>
                 <option value='move' disabled>
                   Move to...
