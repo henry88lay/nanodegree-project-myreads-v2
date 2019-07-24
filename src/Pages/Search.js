@@ -42,6 +42,8 @@ export default class Search extends Component {
     }
   };
   render() {
+    const {query, books} = this.state;
+    const {moveBook} = this.props;
     return (
       <div className='search-books'>
         <div className='search-books-bar'>
@@ -53,14 +55,14 @@ export default class Search extends Component {
               type='text'
               placeholder='Search by title or author'
               onChange={this.handleChange}
-              value={this.state.query}
+              value={query}
             />
           </div>
         </div>
         <div className='search-books-results'>
           <ol className='books-grid'>
-            {this.state.books.length > 0 &&
-              this.state.books.map(book => {
+            {books.length > 0 &&
+              books.map(book => {
                 const foundShelf = this.props.books.find(
                   searchBook => searchBook.id === book.id
                 );
@@ -70,15 +72,9 @@ export default class Search extends Component {
                 } else {
                   book.shelf = 'none';
                 }
-                return (
-                  <Book
-                    key={book.id}
-                    {...book}
-                    moveBook={this.props.moveBook}
-                  />
-                );
+                return <Book key={book.id} {...book} moveBook={moveBook} />;
               })}
-            {this.state.books.length === 0 && (
+            {books.length === 0 && (
               <h1 style={{textAlign: 'center'}}> No Results Found</h1>
             )}
           </ol>
