@@ -14,6 +14,7 @@ export default class Book extends Component {
     }
   };
   render() {
+    const {imageLinks, shelf, title, authors} = this.props;
     return (
       <li>
         <div className='book'>
@@ -24,12 +25,12 @@ export default class Book extends Component {
                 width: 128,
                 height: 193,
                 backgroundImage: `url(${
-                  this.props.imageLinks ? this.props.imageLinks.thumbnail : ''
+                  imageLinks ? imageLinks.thumbnail : ''
                 })`
               }}
             />
             <div className='book-shelf-changer'>
-              <select onChange={this.handleChange} value={this.props.shelf}>
+              <select onChange={this.handleChange} value={shelf}>
                 <option value='move' disabled>
                   Move to...
                 </option>
@@ -40,9 +41,9 @@ export default class Book extends Component {
               </select>
             </div>
           </div>
-          <div className='book-title'>{this.props.title}</div>
+          <div className='book-title'>{title}</div>
           <div className='book-authors'>
-            {this.props.authors ? this.props.authors[0] : 'No Author'}
+            {authors ? authors[0] : 'No Author'}
           </div>
         </div>
       </li>

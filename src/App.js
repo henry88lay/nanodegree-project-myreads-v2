@@ -5,11 +5,12 @@ import './App.css';
 import Home from './Pages/Home';
 import Search from './Pages/Search';
 import Provider, {MyContext} from './Provider/';
+import 'bootstrap/dist/css/bootstrap.css';
 
 class BooksApp extends React.Component {
   render() {
     return (
-      <div className='app'>
+      <div className='app container'>
         <Provider>
           <Switch>
             <Route

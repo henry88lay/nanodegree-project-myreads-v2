@@ -5,7 +5,9 @@ export default class FloatActionButton extends Component {
   render() {
     return (
       <div className='open-search'>
-        <Link to={'/search'}>Add a book</Link>
+        <Link to={'/search'}>
+          <button>Add a book</button>
+        </Link>
       </div>
     );
   }
