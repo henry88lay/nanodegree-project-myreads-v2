@@ -4,9 +4,16 @@ This is a simple React Web Application to manage a list of books from "Currently
 
 Constructed with React and React Router. with a combination of CSS styles and Bootstrap 4 configurations.
 
-## TL;DR
+## Get Started!
 
-To get started developing right away:
+### Step 1: Installation
 
 - install all project dependencies with `npm install`
+
+### Step 2: Run the Server
+
 - start the development server with `npm start`
+
+### Step 3: Open server URL
+
+- Navigate to `http://localhost:3000` and ENJOY!!
